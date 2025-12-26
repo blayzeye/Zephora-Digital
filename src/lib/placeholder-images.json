@@ -35,6 +35,54 @@
       "description": "Food delivery app mockup.",
       "imageUrl": "https://images.unsplash.com/photo-1730818876640-3991b169429b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhcHAlMjBzY3JlZW58ZW58MHx8fHwxNzY2NzQxODU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "app screen"
+    },
+    {
+      "id": "coaching-hero",
+      "description": "Inspirational background for coaching website",
+      "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2FjaGluZ3xlbnwwfHx8fDE3NjY3NTg1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coaching professional"
+    },
+    {
+      "id": "testimonial-1",
+      "description": "Professional headshot of a woman",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NjY3NTg2MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional woman"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Professional headshot of a man",
+      "imageUrl": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW58ZW58MHx8fHwxNzY2NzU4NjMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "Headshot of a creative woman",
+      "imageUrl": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHdvbWFufGVufDB8fHx8MTc2Njc1ODY5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "creative woman"
+    },
+    {
+      "id": "gym-hero",
+      "description": "Person working out in a modern gym",
+      "imageUrl": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxneW18ZW58MHx8fHwxNzY2NzU5MDIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gym workout"
+    },
+    {
+      "id": "gym-class-1",
+      "description": "People in a HIIT class",
+      "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxISUlUfGVufDB8fHx8MTc2Njc1OTA1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "HIIT class"
+    },
+    {
+      "id": "gym-class-2",
+      "description": "Person lifting weights",
+      "imageUrl": "https://images.unsplash.com/photo-1581009137042-c552b485697a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHJlbmd0aCUyMHRyYWluaW5nfGVufDB8fHx8MTc2Njc1OTA3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "strength training"
+    },
+    {
+      "id": "gym-class-3",
+      "description": "People in a yoga class",
+      "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx5b2dhfGVufDB8fHx8MTc2Njc1OTEwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yoga class"
     }
   ]
 }
