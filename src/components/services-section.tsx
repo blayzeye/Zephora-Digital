@@ -28,80 +28,105 @@ import {
 } from '@/components/ui/dialog';
 import CoachingExample from './examples/coaching-example';
 import GymExample from './examples/gym-example';
+import { useState } from 'react';
+
+type Currency = 'USD' | 'EUR' | 'INR';
+
+const currencySymbols: { [key in Currency]: string } = {
+  'USD': '$',
+  'EUR': '€',
+  'INR': '₹',
+};
+
+const exchangeRates: { [key in Currency]: number } = {
+  'USD': 1,
+  'EUR': 0.93,
+  'INR': 83,
+};
 
 const WebDevCard = ({
   title,
   benefits,
-  price,
+  priceUSD,
   exampleComponent,
   preview,
+  currency
 }: {
   title: string;
   benefits: string[];
-  price: number;
+  priceUSD: number;
   exampleComponent: React.ReactNode;
   preview: React.ReactNode;
-}) => (
-  <Dialog>
-    <Card className="glassmorphism group flex flex-col transition-all duration-300 ease-in-out hover:border-primary hover:-translate-y-2">
-      <CardHeader>
-        <CardTitle className="font-headline text-2xl">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="flex-grow space-y-4">
-        <DialogTrigger asChild>
-          <div className="aspect-[4/3] rounded-lg bg-black/30 p-2 border border-border cursor-pointer relative overflow-hidden">
-            <div className="bg-background rounded-t-md p-1.5 flex items-center gap-1">
-              <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+  currency: Currency;
+}) => {
+  const convertedPrice = Math.round(priceUSD * exchangeRates[currency]);
+  return(
+    <Dialog>
+      <Card className="glassmorphism group flex flex-col transition-all duration-300 ease-in-out hover:border-primary hover:-translate-y-2">
+        <CardHeader>
+          <CardTitle className="font-headline text-2xl">{title}</CardTitle>
+        </CardHeader>
+        <CardContent className="flex-grow space-y-4">
+          <DialogTrigger asChild>
+            <div className="aspect-[4/3] rounded-lg bg-black/30 p-2 border border-border cursor-pointer relative overflow-hidden">
+              <div className="bg-background rounded-t-md p-1.5 flex items-center gap-1">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+              </div>
+              <div className="bg-white text-black h-full rounded-b-md p-2 overflow-hidden">
+                {preview}
+              </div>
+              <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <Eye className="w-8 h-8 text-white" />
+              </div>
             </div>
-            <div className="bg-white text-black h-full rounded-b-md p-2 overflow-hidden">
-              {preview}
-            </div>
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <Eye className="w-8 h-8 text-white" />
-            </div>
-          </div>
-        </DialogTrigger>
-        <ul className="space-y-2 text-foreground/80">
-          {benefits.map((benefit, i) => (
-            <li key={i} className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-primary" />
-              <span>{benefit}</span>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-      <CardFooter className="flex justify-between items-center">
-        <p className="text-sm text-foreground/60">
-          Starts at <span className="font-bold text-primary">${price}</span>
-        </p>
-        <DialogTrigger asChild>
-          <Button variant="outline">View Example</Button>
-        </DialogTrigger>
-      </CardFooter>
-    </Card>
-    <DialogContent className="max-w-7xl h-[90vh] flex flex-col">
-      <DialogHeader>
-        <DialogTitle>{title} - Live Preview</DialogTitle>
-      </DialogHeader>
-      <div className="flex-grow overflow-auto rounded-lg border">
-        {exampleComponent}
-      </div>
-    </DialogContent>
-  </Dialog>
-);
+          </DialogTrigger>
+          <ul className="space-y-2 text-foreground/80">
+            {benefits.map((benefit, i) => (
+              <li key={i} className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-primary" />
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </CardContent>
+        <CardFooter className="flex justify-between items-center">
+          <p className="text-sm text-foreground/60">
+            Starts at <span className="font-bold text-primary">{currencySymbols[currency]}{convertedPrice.toLocaleString('en-US')}</span>
+          </p>
+          <DialogTrigger asChild>
+            <Button variant="outline">View Example</Button>
+          </DialogTrigger>
+        </CardFooter>
+      </Card>
+      <DialogContent className="max-w-7xl h-[90vh] flex flex-col">
+        <DialogHeader>
+          <DialogTitle>{title} - Live Preview</DialogTitle>
+        </DialogHeader>
+        <div className="flex-grow overflow-auto rounded-lg border">
+          {exampleComponent}
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
 
 const AppDevCard = ({
   title,
   features,
   imageId,
+  priceUSD,
+  currency,
 }: {
   title: string;
   features: string[];
   imageId: string;
+  priceUSD: number;
+  currency: Currency;
 }) => {
   const image = PlaceHolderImages.find((img) => img.id === imageId);
+  const convertedPrice = Math.round(priceUSD * exchangeRates[currency]);
   return (
     <Card className="glassmorphism group flex flex-col transition-all duration-300 ease-in-out hover:border-primary hover:-translate-y-2 overflow-hidden">
       <CardHeader>
@@ -133,14 +158,19 @@ const AppDevCard = ({
           </ul>
         </div>
       </CardContent>
-      <CardFooter>
-        <Button className="w-full">Request Demo</Button>
+       <CardFooter className="flex justify-between items-center">
+        <p className="text-sm text-foreground/60">
+            Starts at <span className="font-bold text-primary">{currencySymbols[currency]}{convertedPrice.toLocaleString('en-US')}</span>
+        </p>
+        <Button>Request Demo</Button>
       </CardFooter>
     </Card>
   );
 };
 
 const ServicesSection = () => {
+  const [selectedCurrency, setSelectedCurrency] = useState<Currency>('INR');
+
   return (
     <Section id="services">
       <div className="text-center mb-12">
@@ -151,6 +181,16 @@ const ServicesSection = () => {
           From concept to launch, we provide the expertise to build outstanding
           digital products.
         </p>
+      </div>
+
+       <div className="flex justify-center mb-8">
+        <Tabs defaultValue="INR" onValueChange={(value) => setSelectedCurrency(value as Currency)} className="w-auto">
+          <TabsList>
+            <TabsTrigger value="INR">INR</TabsTrigger>
+            <TabsTrigger value="USD">USD</TabsTrigger>
+            <TabsTrigger value="EUR">EUR</TabsTrigger>
+          </TabsList>
+        </Tabs>
       </div>
 
       <Tabs defaultValue="web" className="w-full">
@@ -174,7 +214,8 @@ const ServicesSection = () => {
                 'Blog & Content Platform',
                 'Payment Integration',
               ]}
-              price={499}
+              priceUSD={199}
+              currency={selectedCurrency}
               exampleComponent={<CoachingExample />}
               preview={
                 <div className="font-sans text-xs">
@@ -197,7 +238,8 @@ const ServicesSection = () => {
                 'Membership Management',
                 'Trainer Profiles',
               ]}
-              price={799}
+              priceUSD={299}
+              currency={selectedCurrency}
               exampleComponent={<GymExample />}
               preview={
                 <div className="font-sans text-xs">
@@ -224,6 +266,8 @@ const ServicesSection = () => {
                 'Push Notifications',
               ]}
               imageId="app-mockup-ecommerce"
+              priceUSD={499}
+              currency={selectedCurrency}
             />
             <AppDevCard
               title="Food Delivery App"
@@ -234,6 +278,8 @@ const ServicesSection = () => {
                 'Ratings & Reviews',
               ]}
               imageId="app-mockup-food"
+              priceUSD={599}
+              currency={selectedCurrency}
             />
           </div>
         </TabsContent>
