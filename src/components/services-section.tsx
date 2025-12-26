@@ -29,6 +29,7 @@ import {
 import CoachingExample from './examples/coaching-example';
 import GymExample from './examples/gym-example';
 import { useState } from 'react';
+import Link from 'next/link';
 
 type Currency = 'USD' | 'EUR' | 'INR';
 
@@ -162,7 +163,9 @@ const AppDevCard = ({
         <p className="text-sm text-foreground/60">
             Starts at <span className="font-bold text-primary">{currencySymbols[currency]}{convertedPrice.toLocaleString('en-US')}</span>
         </p>
-        <Button>Request Demo</Button>
+        <Button asChild>
+          <Link href="#contact">Request Demo</Link>
+        </Button>
       </CardFooter>
     </Card>
   );
@@ -214,7 +217,7 @@ const ServicesSection = () => {
                 'Blog & Content Platform',
                 'Payment Integration',
               ]}
-              priceUSD={199}
+              priceUSD={99}
               currency={selectedCurrency}
               exampleComponent={<CoachingExample />}
               preview={
@@ -238,7 +241,7 @@ const ServicesSection = () => {
                 'Membership Management',
                 'Trainer Profiles',
               ]}
-              priceUSD={299}
+              priceUSD={149}
               currency={selectedCurrency}
               exampleComponent={<GymExample />}
               preview={
@@ -266,7 +269,7 @@ const ServicesSection = () => {
                 'Push Notifications',
               ]}
               imageId="app-mockup-ecommerce"
-              priceUSD={499}
+              priceUSD={399}
               currency={selectedCurrency}
             />
             <AppDevCard
@@ -278,7 +281,7 @@ const ServicesSection = () => {
                 'Ratings & Reviews',
               ]}
               imageId="app-mockup-food"
-              priceUSD={599}
+              priceUSD={499}
               currency={selectedCurrency}
             />
           </div>
@@ -302,13 +305,16 @@ const ServicesSection = () => {
                 Our design process is centered around your user. We conduct
                 thorough research to understand their needs and behaviors,
                 ensuring the final product is not only beautiful but also
+
                 highly functional and easy to use. From wireframes and
                 prototypes to a complete brand identity, we craft experiences
                 that leave a lasting impression.
               </p>
             </CardContent>
             <CardFooter className="justify-center">
-              <Button>Discuss Your Design Needs</Button>
+              <Button asChild>
+                <Link href="#contact">Discuss Your Design Needs</Link>
+              </Button>
             </CardFooter>
           </Card>
         </TabsContent>

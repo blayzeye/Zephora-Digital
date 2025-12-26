@@ -5,6 +5,7 @@ import { Check } from "lucide-react";
 import { Section } from './section';
 import { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
+import Link from 'next/link';
 
 type Currency = 'USD' | 'EUR' | 'INR';
 
@@ -23,7 +24,7 @@ const exchangeRates: { [key in Currency]: number } = {
 const pricingTiers = [
     {
         name: "Starter",
-        priceUSD: 299,
+        priceUSD: 99,
         description: "For new businesses and individuals getting started.",
         features: ["5-Page Website", "Basic SEO", "Mobile Responsive", "Contact Form"],
         isPopular: false,
@@ -31,7 +32,7 @@ const pricingTiers = [
     },
     {
         name: "Business",
-        priceUSD: 49,
+        priceUSD: 19,
         description: "For growing businesses that need more features and support.",
         features: ["15-Page Website", "Advanced SEO", "CMS Integration", "E-commerce Ready", "Hosting & Domain", "Priority Support"],
         isPopular: true,
@@ -39,7 +40,7 @@ const pricingTiers = [
     },
     {
         name: "Premium",
-        priceUSD: 1499,
+        priceUSD: 299,
         description: "For established businesses requiring a full-scale solution.",
         features: ["Unlimited Pages", "Custom App Development", "Dedicated Account Manager", "24/7 Support", "API Integrations"],
         isPopular: false,
@@ -97,9 +98,9 @@ const PricingSection = () => {
                     </ul>
                     </CardContent>
                     <CardFooter>
-                    <Button className={`w-full ${tier.isPopular ? 'bg-primary text-primary-foreground' : 'bg-accent text-accent-foreground hover:bg-accent/90'}`}>
-                        Get Started
-                    </Button>
+                      <Button asChild className={`w-full ${tier.isPopular ? 'bg-primary text-primary-foreground' : 'bg-accent text-accent-foreground hover:bg-accent/90'}`}>
+                        <Link href="#contact">Get Started</Link>
+                      </Button>
                     </CardFooter>
                 </Card>
             );
