@@ -182,7 +182,7 @@ const CoachingExample = () => {
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8 px-6">
         <div className="container mx-auto text-center">
-            <p>&copy; 2024 Jane Doe Coaching. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Jane Doe Coaching. All Rights Reserved.</p>
         </div>
       </footer>
     </div>

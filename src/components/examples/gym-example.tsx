@@ -127,7 +127,7 @@ const GymExample = () => {
       {/* Footer */}
       <footer className="bg-gray-900 py-8 px-6">
         <div className="container mx-auto text-center text-gray-400">
-            <p>&copy; 2024 POWER FIT. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} POWER FIT. All Rights Reserved.</p>
         </div>
       </footer>
     </div>

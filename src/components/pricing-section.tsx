@@ -41,7 +41,7 @@ const DynamicPrice = ({ price, isMonthly }: { price: number, isMonthly: boolean 
 const pricingTiers = [
     {
         name: "Starter",
-        price: 999,
+        price: 799,
         description: "For new businesses and individuals getting started.",
         features: ["5-Page Website", "Basic SEO", "Mobile Responsive", "Contact Form"],
         isPopular: false,
@@ -49,7 +49,7 @@ const pricingTiers = [
     },
     {
         name: "Business",
-        price: 249,
+        price: 199,
         description: "For growing businesses that need more features and support.",
         features: ["15-Page Website", "Advanced SEO", "CMS Integration", "E-commerce Ready", "Hosting & Domain", "Priority Support"],
         isPopular: true,
@@ -57,7 +57,7 @@ const pricingTiers = [
     },
     {
         name: "Premium",
-        price: 4999,
+        price: 2999,
         description: "For established businesses requiring a full-scale solution.",
         features: ["Unlimited Pages", "Custom App Development", "Dedicated Account Manager", "24/7 Support", "API Integrations"],
         isPopular: false,
