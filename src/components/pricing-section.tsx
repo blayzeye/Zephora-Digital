@@ -13,7 +13,7 @@ const currencyMap: { [key: string]: string } = {
   'ja-JP': '¥',
 };
 
-const DynamicPrice = ({ price }: { price: number }) => {
+const DynamicPrice = ({ price, isMonthly }: { price: number, isMonthly: boolean }) => {
   const [currencySymbol, setCurrencySymbol] = useState('$');
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const DynamicPrice = ({ price }: { price: number }) => {
     <span className="flex items-baseline">
       <span className="text-3xl font-bold">{currencySymbol}</span>
       <span className="text-5xl font-extrabold tracking-tighter">{price}</span>
-      <span className="ml-1 text-xl font-medium text-foreground/50">/mo</span>
+      {isMonthly && <span className="ml-1 text-xl font-medium text-foreground/50">/mo</span>}
     </span>
   );
 };
@@ -41,24 +41,27 @@ const DynamicPrice = ({ price }: { price: number }) => {
 const pricingTiers = [
     {
         name: "Starter",
-        price: 99,
+        price: 999,
         description: "For new businesses and individuals getting started.",
         features: ["5-Page Website", "Basic SEO", "Mobile Responsive", "Contact Form"],
         isPopular: false,
+        isMonthly: false,
     },
     {
         name: "Business",
         price: 249,
         description: "For growing businesses that need more features and support.",
-        features: ["15-Page Website", "Advanced SEO", "CMS Integration", "E-commerce Ready", "Priority Support"],
+        features: ["15-Page Website", "Advanced SEO", "CMS Integration", "E-commerce Ready", "Hosting & Domain", "Priority Support"],
         isPopular: true,
+        isMonthly: true,
     },
     {
         name: "Premium",
-        price: 499,
+        price: 4999,
         description: "For established businesses requiring a full-scale solution.",
         features: ["Unlimited Pages", "Custom App Development", "Dedicated Account Manager", "24/7 Support", "API Integrations"],
         isPopular: false,
+        isMonthly: false,
     }
 ];
 
@@ -82,7 +85,7 @@ const PricingSection = () => {
             </CardHeader>
             <CardContent className="flex-grow flex flex-col justify-between">
               <div className="text-center my-8">
-                <DynamicPrice price={tier.price} />
+                <DynamicPrice price={tier.price} isMonthly={tier.isMonthly} />
               </div>
               <ul className="space-y-3">
                 {tier.features.map((feature, i) => (
