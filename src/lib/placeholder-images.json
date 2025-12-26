@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "portfolio-1",
+      "description": "A modern analytics dashboard for a SaaS company.",
+      "imageUrl": "https://images.unsplash.com/photo-1759661966728-4a02e3c6ed91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkYXNoYm9hcmQlMjBhbmFseXRpY3N8ZW58MHx8fHwxNzY2NjYzODEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dashboard analytics"
+    },
+    {
+      "id": "portfolio-2",
+      "description": "E-commerce storefront for a luxury fashion brand.",
+      "imageUrl": "https://images.unsplash.com/photo-1670582068052-9150edc58ce5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmFzaGlvbiUyMHdlYnNpdGV8ZW58MHx8fHwxNzY2NzMyNDY5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion website"
+    },
+    {
+      "id": "portfolio-3",
+      "description": "Corporate website for a financial tech firm.",
+      "imageUrl": "https://images.unsplash.com/photo-1553484771-0a615f264d58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb3Jwb3JhdGUlMjB3ZWJzaXRlfGVufDB8fHx8MTc2Njc0MzcyOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "corporate website"
+    },
+    {
+      "id": "portfolio-4",
+      "description": "Booking platform for a travel agency.",
+      "imageUrl": "https://images.unsplash.com/photo-1700936206521-791dcd35c745?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0cmF2ZWwlMjB3ZWJzaXRlfGVufDB8fHx8MTc2Njc0NDQ0MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "travel website"
+    },
+    {
+      "id": "app-mockup-ecommerce",
+      "description": "E-commerce app mockup.",
+      "imageUrl": "https://images.unsplash.com/photo-1752055340594-4eb0eda11a64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhcHAlMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzY2NzExNjk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "app interface"
+    },
+    {
+      "id": "app-mockup-food",
+      "description": "Food delivery app mockup.",
+      "imageUrl": "https://images.unsplash.com/photo-1730818876640-3991b169429b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhcHAlMjBzY3JlZW58ZW58MHx8fHwxNzY2NzQxODU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "app screen"
+    }
+  ]
 }
