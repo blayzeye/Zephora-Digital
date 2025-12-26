@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { Section } from './section';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
 
 type Currency = 'USD' | 'EUR' | 'INR';
@@ -23,7 +23,7 @@ const exchangeRates: { [key in Currency]: number } = {
 const pricingTiers = [
     {
         name: "Starter",
-        priceUSD: 499,
+        priceUSD: 299,
         description: "For new businesses and individuals getting started.",
         features: ["5-Page Website", "Basic SEO", "Mobile Responsive", "Contact Form"],
         isPopular: false,
@@ -31,7 +31,7 @@ const pricingTiers = [
     },
     {
         name: "Business",
-        priceUSD: 99,
+        priceUSD: 49,
         description: "For growing businesses that need more features and support.",
         features: ["15-Page Website", "Advanced SEO", "CMS Integration", "E-commerce Ready", "Hosting & Domain", "Priority Support"],
         isPopular: true,
@@ -39,7 +39,7 @@ const pricingTiers = [
     },
     {
         name: "Premium",
-        priceUSD: 2499,
+        priceUSD: 1499,
         description: "For established businesses requiring a full-scale solution.",
         features: ["Unlimited Pages", "Custom App Development", "Dedicated Account Manager", "24/7 Support", "API Integrations"],
         isPopular: false,

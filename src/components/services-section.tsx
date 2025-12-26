@@ -174,7 +174,7 @@ const ServicesSection = () => {
                 'Blog & Content Platform',
                 'Payment Integration',
               ]}
-              price={999}
+              price={499}
               exampleComponent={<CoachingExample />}
               preview={
                 <div className="font-sans text-xs">
@@ -197,7 +197,7 @@ const ServicesSection = () => {
                 'Membership Management',
                 'Trainer Profiles',
               ]}
-              price={1299}
+              price={799}
               exampleComponent={<GymExample />}
               preview={
                 <div className="font-sans text-xs">
