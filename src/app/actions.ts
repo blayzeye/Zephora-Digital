@@ -39,7 +39,16 @@ export async function submitContactForm(
 
   try {
     // Here you would typically send an email, save to a database, etc.
-    console.log("Form data submitted successfully:", validatedFields.data);
+    // The following is a placeholder for sending an email.
+    console.log("--- Contact Form Submission ---");
+    console.log("Recipient: om27business@gmail.com");
+    console.log("From: ", validatedFields.data.name, `<${validatedFields.data.email}>`);
+    console.log("Business Type: ", validatedFields.data.businessType);
+    if(validatedFields.data.whatsapp) {
+      console.log("WhatsApp: ", validatedFields.data.whatsapp);
+    }
+    console.log("-----------------------------");
+
 
     return { message: "Thank you! We've received your message and will be in touch soon." };
   } catch (e) {

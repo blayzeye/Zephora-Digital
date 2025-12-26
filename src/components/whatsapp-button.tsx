@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
       size="icon"
       className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-primary shadow-lg hover:bg-primary/90 hover:scale-105 transition-transform duration-300 z-50"
     >
-      <Link href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <Link href="https://wa.me/917807176448" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <WhatsAppIcon />
       </Link>
     </Button>
