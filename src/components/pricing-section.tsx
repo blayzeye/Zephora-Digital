@@ -23,7 +23,7 @@ const exchangeRates: { [key in Currency]: number } = {
 const pricingTiers = [
     {
         name: "Starter",
-        priceUSD: 799,
+        priceUSD: 499,
         description: "For new businesses and individuals getting started.",
         features: ["5-Page Website", "Basic SEO", "Mobile Responsive", "Contact Form"],
         isPopular: false,
@@ -31,7 +31,7 @@ const pricingTiers = [
     },
     {
         name: "Business",
-        priceUSD: 199,
+        priceUSD: 99,
         description: "For growing businesses that need more features and support.",
         features: ["15-Page Website", "Advanced SEO", "CMS Integration", "E-commerce Ready", "Hosting & Domain", "Priority Support"],
         isPopular: true,
@@ -39,7 +39,7 @@ const pricingTiers = [
     },
     {
         name: "Premium",
-        priceUSD: 2999,
+        priceUSD: 2499,
         description: "For established businesses requiring a full-scale solution.",
         features: ["Unlimited Pages", "Custom App Development", "Dedicated Account Manager", "24/7 Support", "API Integrations"],
         isPopular: false,
